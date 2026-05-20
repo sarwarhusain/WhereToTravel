@@ -20,13 +20,16 @@ const AddDestination = () => {
 
     console.log(AddDestinationData);
     //fetch to server
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addDataForDestination`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/addDataForDestination`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(AddDestinationData),
       },
-      body: JSON.stringify(AddDestinationData),
-    });
+    );
 
     const data = await res.json();
     console.log(data);
